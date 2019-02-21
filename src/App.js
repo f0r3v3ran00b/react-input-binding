@@ -17,6 +17,7 @@ class App extends Component {
       let inputValue = event.target.value;
       console.log(`Change... ${inputValue}`)
       this.setState({
+          inputValue: inputValue,
           labelText: inputValue
       });
   }
@@ -27,8 +28,8 @@ class App extends Component {
 
       <div className="App">
           <p />
-          <input placeholder={this.state.defaultText} type="text" onChange={this.handleValueChange} />
-          <div>{this.state.labelText}</div>
+          <input className="input" placeholder={this.state.defaultText} type="text" onChange={this.handleValueChange} value={this.state.inputValue}/>
+          <div className="label">{this.state.labelText}</div>
       </div>
     );
   }
